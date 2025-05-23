@@ -44,3 +44,30 @@ if st.button("Predict Flower Type"):
     new_flower = np.array([sepal_length, sepal_width, petal_length, petal_width])
     prediction = knn_predict(X, y, new_flower)
     st.success(f"🌼 Predicted: **{num2species[prediction]}**")
+
+theme = st.selectbox("Choose Theme 🎨", ["Light 🌞", "Dark 🌙"])
+
+if theme == "Dark 🌙":
+    st.markdown(
+        """
+        <style>
+        .main {
+            background-color: #1e1e1e;
+            color: #f1f1f1;
+        }
+        </style>
+        """,
+        unsafe_allow_html=True
+    )
+else:
+    st.markdown(
+        """
+        <style>
+        .main {
+            background-color: #ffffff;
+            color: #000000;
+        }
+        </style>
+        """,
+        unsafe_allow_html=True
+    )
